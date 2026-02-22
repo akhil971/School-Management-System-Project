@@ -1,0 +1,255 @@
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header {
+    background-color: #7882d8;
+    padding: 10px;
+}
+
+.navbar {
+    background-color: #3c46a3;
+    padding: 10px;
+
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: black !important;
+    font-size: 20px;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link i {
+    color: rgb(19, 105, 84) !important;
+
+}
+
+.footer {
+    background-color: #696c83;
+    padding: 35px;
+    font-size: 20px;
+
+}
+
+.footer a {
+    color: aliceblue;
+}
+
+.footer p {
+    color: aliceblue;
+}
+
+.footer h4 {
+    color: aliceblue;
+}
+
+.footer .box {
+    border: 3px solid rgb(99, 162, 202);
+    background-image: linear-gradient(to right, #656fc8, #babdce);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 22px;
+    border-top-right-radius: 30px;
+    font-family: cursive;
+}
+
+.capyright {
+    background-color: #3d4486;
+    padding: 10px;
+}
+
+.news h4 {
+    background-color: #284a6c;
+    padding: 10px;
+
+}
+
+.news h5 {
+    background-color: #bd646c;
+    padding: 10px;
+}
+
+.Gaya .box {
+    border: 3px solid rgb(99, 162, 202);
+    background-image: linear-gradient(to right, #656fc8, #babdce);
+    margin-top: 30px;
+    color: aliceblue;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 22px;
+    border-top-right-radius: 30px;
+    font-family: cursive;
+}
+
+.events .box {
+    border: 3px solid rgb(99, 162, 202);
+    background-image: linear-gradient(to right, #656fc8, #babdce);
+    margin-top: 30px;
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 22px;
+    border-top-right-radius: 30px;
+    font-family: cursive;
+
+}
+
+.our {
+    text-align: center;
+    padding: 50px;
+    background-color: #f5f5f5;
+}
+
+.our li{
+        text-align: justify;
+    font-size: 20px;
+}
+
+.our p{
+        text-align: justify;
+}
+
+.events h2 {
+    color: #a54a52;
+}
+
+.events h5 {
+    color: #8e2825;
+}
+
+.our h5 i {
+    font-size: 80px;
+    color: rgb(115, 115, 230);
+}
+
+.our p {
+    font-size: 20px;
+
+}
+
+.our .row {
+    padding: 20px;
+}
+
+.events .abcd {
+    border: 4px solid #656fc8;
+    width: 20%;
+}
+
+.Gallery {
+
+    padding: 60px 0px 60px 0px;
+}
+
+.Gallery  a {
+    padding: 5px;
+    margin-top: 14px;
+}
+
+.Gallery .box {
+    border: 3px solid rgb(99, 162, 202);
+    background-image: linear-gradient(to right, #656fc8, #babdce);
+    margin-top: 30px;
+    color: white;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 22px;
+    border-top-right-radius: 30px;
+    font-family: cursive;
+
+
+}
+
+.Gallery .box1 {
+    border: 3px solid rgb(93, 62, 62);
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin: 4px;
+
+
+}
+
+
+.Gallery .box1 img {
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    padding: 5px;
+
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    font-family: cursive;
+}
+
+.manipal .box {
+    border: 3px solid rgb(99, 162, 202);
+    background-image: linear-gradient(to right, #656fc8, #babdce);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 22px;
+    border-top-right-radius: 30px;
+    font-family: cursive;
+}
+
+.about {
+    padding: 20px;
+}
+
+.about h1 {
+    color: #0a2442;
+    font: bold;
+}
+
+.about p {
+    padding: 20px;
+    font-size: 20px;
+    font: bold;
+}
+
+.about button {
+    font-size: 20px;
+    background-color: #7882d8;
+}
+
+.our h2 {
+    border: 3px solid rgb(99, 162, 202);
+    background-image: linear-gradient(to right, #656fc8, #babdce);
+    padding: 10px;
+    border-top-right-radius: 30px;
+
+}
+
+.our p {
+    font-size: 20px;
+    font: bold;
+    padding: 10px;
+}
+
+.room {
+    padding: 40px;
+}
+
+.room h1 {
+    text-align: center;
+    padding: 10px;
+    background-image: linear-gradient(to right, #656fc8, #babdce);
+}
+
+.room form {
+    padding: 20px;
+
+}
+
+.room label {
+    font-size: 20px;
+}
+
+.room input {
+    height: 60px;
+}
+
+.room button {
+    width: 10%;
+}
