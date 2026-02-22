@@ -1,0 +1,117 @@
+[31-Aug-2023 15:09:04 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 52
+[31-Aug-2023 15:09:04 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[31-Aug-2023 15:09:19 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[31-Aug-2023 15:12:48 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 52
+[31-Aug-2023 15:12:48 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[31-Aug-2023 15:12:55 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[31-Aug-2023 15:14:14 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 52
+[31-Aug-2023 15:14:14 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[31-Aug-2023 15:14:19 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[31-Aug-2023 15:14:28 Asia/Kolkata] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /home1/codezcsr/study4goals.in/adminpanel/action.php:415
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/action.php(415): getimagesize('')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 415
+[31-Aug-2023 15:14:35 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[31-Aug-2023 15:14:37 Asia/Kolkata] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /home1/codezcsr/study4goals.in/adminpanel/action.php:415
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/action.php(415): getimagesize('')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 415
+[31-Aug-2023 15:14:40 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[31-Aug-2023 15:14:55 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[31-Aug-2023 15:17:20 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 52
+[31-Aug-2023 15:17:20 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[31-Aug-2023 15:17:26 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.about_trmm' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/about_trmm.php:4
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/about_trmm.php(4): mysqli_query(Object(mysqli), 'SELECT * FROM `...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/about_trmm.php on line 4
+[31-Aug-2023 15:17:29 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[31-Aug-2023 15:19:35 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[31-Aug-2023 15:35:41 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 52
+[31-Aug-2023 15:35:41 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[31-Aug-2023 15:35:51 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[01-Sep-2023 16:43:02 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 52
+[01-Sep-2023 16:43:02 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[01-Sep-2023 16:43:11 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.about_trmm' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/about_trmm.php:4
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/about_trmm.php(4): mysqli_query(Object(mysqli), 'SELECT * FROM `...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/about_trmm.php on line 4
+[02-Sep-2023 15:08:58 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84
+[02-Sep-2023 15:20:42 Asia/Kolkata] PHP Warning:  Undefined array key "name" in /home1/codezcsr/study4goals.in/adminpanel/action.php on line 54
+[02-Sep-2023 15:20:42 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.banner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php:37
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/dashboard.php(37): mysqli_query(Object(mysqli), 'select * from b...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/dashboard.php on line 37
+[02-Sep-2023 15:20:49 Asia/Kolkata] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'codezcsr_study4goals.header_baner' doesn't exist in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php:84
+Stack trace:
+#0 /home1/codezcsr/study4goals.in/adminpanel/header_baner.php(84): mysqli_query(Object(mysqli), 'select * from h...')
+#1 {main}
+  thrown in /home1/codezcsr/study4goals.in/adminpanel/header_baner.php on line 84

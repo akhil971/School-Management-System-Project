@@ -1,125 +1,223 @@
 <?php
-
+session_start();
 include 'connection.php';
-
-if(!empty($_GET['subjectid'])){
-$subjectId = $_GET['subjectid'];
-
-$sql = "DELETE FROM subject WHERE id=$subjectId";
-$run = $conn->query($sql);
-if($run==1){
-    header("Location:subjectlist.php");
-   
-}else{
-    echo 'Not Deleted';
+include 'sweetalert.php';
+$webMsg = '';
+if (isset($_SESSION['web_msg'])) {
+  $webMsg = $_SESSION['web_msg'];
+  unset($_SESSION['web_msg']);
 }
+$webErrMsg = '';
+if (isset($_SESSION['web_err_msg'])) {
+  $webErrMsg = $_SESSION['web_err_msg'];
+  unset($_SESSION['web_err_msg']);
 }
+if (isset($_GET['delete']) && $_GET['delete'] == 'tbl_user') {
+  $id = $_GET['id'];
+  $sql = "DELETE FROM `tbl_user` WHERE `id`='$id'";
+  $run = mysqli_query($conn, $sql);
 
+  if ($run) {
+    $_SESSION['web_msg'] = "Record deleted successfully!";
+  } else {
+    $_SESSION['web_err_msg'] = "Failed to delete record.";
+  }
 
-
-if(!empty($_GET['attendanceid'])){
-$attendanceId = $_GET['attendanceid'];
-
-$sql = "DELETE FROM attendance WHERE id=$attendanceId";
-$run = $conn->query($sql);
-if($run==1){
-    header("Location:attendancelist.php");
-   
-}else{
-    echo 'Not Deleted';
+  header("location:userlistlist.php");
+  exit();
 }
 
+if (isset($_GET['delete']) && $_GET['delete'] == 'tbl_course') {
+  $id = $_GET['id'];
+
+
+  $sql = "SELECT image, video, pdf, ppt FROM tbl_course WHERE id='$id'";
+  $result = mysqli_query($conn, $sql);
+
+  if ($result && mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+
+    if ($row['image'] && file_exists('uploads/' . $row['image'])) {
+      unlink('uploads/' . $row['image']);
+    }
+
+    if ($row['video'] && file_exists('uploads/videos/' . $row['video'])) {
+      unlink('uploads/videos/' . $row['video']);
+    }
+
+    if ($row['pdf'] && file_exists('uploads/pdf/' . $row['pdf'])) {
+      unlink('uploads/pdf/' . $row['pdf']);
+    }
+
+    if ($row['ppt'] && file_exists('uploads/ppt/' . $row['ppt'])) {
+      unlink('uploads/ppt/' . $row['ppt']);
+    }
+  }
+  $sql = "DELETE FROM `tbl_course` WHERE `course_name`='$id'";
+  $run = mysqli_query($conn, $sql);
+
+  if ($run) {
+    $_SESSION['web_msg'] = "Record deleted successfully!";
+  } else {
+    $_SESSION['web_err_msg'] = "Failed to delete record.";
+  }
+
+  header("location:courselist.php");
+  exit();
 }
 
-if(!empty($_GET['classroomid'])){
-$classroomId = $_GET['classroomid'];
-
-$sql = "DELETE FROM classroom WHERE id=$classroomId";
-$run = $conn->query($sql);
-if($run==1){
-    header("Location:classroomlist.php");
-   
-}else{
-    echo 'Not Deleted';
-}
-}
-
-
-if(!empty($_GET['studentid'])){
-$studentId = $_GET['studentid'];
-
-$sql = "DELETE FROM student WHERE id=$studentId";
-$run = $conn->query($sql);
-if($run==1){
-    header("Location:studentlist.php");
-   
-}else{
-    echo 'Not Deleted';
-}
-}
-
-
-
-if(!empty($_GET['resultid'])){
-$resultId =$_GET['resultid'];
-$sql ="DELETE FROM result WHERE id=$resultId";
-$run =$conn->query($sql);
-if($run==1){
-     header("location:resultlist.php");
-}else{
-    echo  'Not DEleted';
-}
-}
-
-  
-
-if(!empty($_GET['examid'])){
-$examId =$_GET['examid'];
-$sql ="DELETE FROM exam WHERE id=$examId";
-$run =$conn->query($sql);
-if($run==1){
-     header("location:examlist.php");
-}else{
-    echo  'Not DEleted';
-}
-}
-
-if(!empty($_GET['teacharid'])){
-$teacharid =$_GET['teacharid'];
-$sql ="DELETE FROM teacher WHERE id=$teacharid";
-$run =$conn->query($sql);
-if($run==1){
-    header("location:teacharlist.php");
-}else{
-    echo  'not DEleted';
-
-}
+if (isset($_GET['delete_enquiry'])) {
+  $id = $_GET['delete_enquiry'];
+  $sql = "DELETE FROM `tbl_enquiry` WHERE `id`='$id'";
+  $run = mysqli_query($conn, $sql);
+  if ($run == true) {
+  } else {
+  }
+  header("location:enquiry.php");
 }
 
 
+if (isset($_GET['delete_admission'])) {
+  $id = $_GET['delete_admission'];
+  $sql = "DELETE FROM `tbl_admission` WHERE `id`='$id'";
+  $run = mysqli_query($conn, $sql);
+  if ($run == true) {
+  } else {
+  }
+  header("location:admissionform.php");
+}
 
-if(!empty($_GET['classroom_studentid'])){
-$classroom_studentid =$_GET['classroom_studentid'];
-$sql ="DELETE FROM classroom_student WHERE id=$classroom_studentid";
-$run =$conn->query($sql);
-if($run==1){
-    header("location:classroom_studentlist.php");
-}else{
-    echo  'not DEleted';
+if(isset($_GET['delete_icon'])) {
+  $id = $_GET['delete_icon'];
+  $sql = "DELETE FROM tbl_icon WHERE `id`='$id'";
+  $run = mysqli_query($conn, $sql);
+  if ($run == true) {
+  } else {
+  }
+  header("location:iconlist.php");
+}
 
+
+if (isset($_GET['delete_gallery'])) {
+  $id = $_GET['delete_gallery'];
+  $sql = "DELETE FROM tbl_gallery WHERE `id`='$id'";
+  $run = mysqli_query($conn, $sql);
+  if ($run == true) {
+  } else {
+  }
+  header("location:gallerylist.php");
+}
+
+
+if (isset($_GET['delete_setting'])) {
+  $id = $_GET['delete_setting'];
+  $sql = "DELETE FROM tbl_setting WHERE `id`='$id'";
+  $run = mysqli_query($conn, $sql);
+  if ($run == true) {
+  } else {
+  }
+  header("location:settinglist.php");
+}
+
+if (isset($_GET['delete_about'])) {
+  $id = $_GET['delete_about'];
+  $sql = "DELETE FROM tbl_about WHERE `id`='$id'";
+  $run = mysqli_query($conn, $sql);
+  if ($run == true) {
+  } else {
+  }
+  header("location:aboutlist.php");
+}
+
+
+if (!empty($_GET['studentId'])) {
+
+  $studentId = $_GET['studentId'];
+
+  $sql = "DELETE FROM student WHERE `id`='$studentId'";
+  $run = mysqli_query($conn, $sql);
+  if ($run == true) { 
+  } else {
+  }
+  header("location:student.php");
+}
+
+
+if (!empty($_GET['aboutId'])) {
+
+  $aboutId = $_GET['aboutId'];
+
+  $sql = "DELETE FROM aboutus WHERE `id`='$aboutId'";
+  $run = $conn->query($sql);
+  if ($run == 1) { 
+    header("Location:aboutus.php");
+  } else {
+    echo 'Not Deleted';
+  }
+}
+
+if(!empty($_GET['galleryId'])){
+  $galleryId =$_GET['galleryId'];
+  $sql ="DELETE FROM gallery WHERE `id`='$galleryId'";
+  $run = $conn->query($sql);
+  // print_r( $run);die;
+    if($run == 1){ 
+    header("Location: gallery.php");
+  } else {
+    echo 'Not Deleted';
 }
 }
 
+if(!empty($_GET['missionId'])){
 
-if(!empty($_GET['issuesid'])){
-$issuesid =$_GET['issuesid'];
-$sql ="DELETE FROM issues WHERE id=$issuesid";
-$run =$conn->query($sql);
-if($run==1){
-    header("location:issueslist.php");
-}else{
-    echo  'not DEleted';
+  $missionId =$_GET['missionId'];
+  // print_r($_GET);die;
 
+    $sql = "DELETE FROM mission WHERE `id`='$missionId'";
+    // print_r($sql);die;
+  $run = $conn->query($sql);
+  if ($run == 1) { 
+    header("Location:mission.php");
+  } else {
+    echo 'Not Deleted';
+  }
 }
+
+if (!empty($_GET['visionId'])) {
+
+  $visionId = $_GET['visionId'];
+
+  $sql = "DELETE FROM vision WHERE `id`='$visionId'";
+  $run = $conn->query($sql);
+  if ($run == 1) { 
+    header("Location:vision.php");
+  } else {
+    echo 'Not Deleted';
+  }
 }
-?>
+
+if (!empty($_GET['lunchId'])) {
+
+  $lunchId = $_GET['lunchId'];
+
+  $sql = "DELETE FROM lunch WHERE `id`='$lunchId'";
+  $run = $conn->query($sql);
+  if ($run == 1) { 
+    header("Location:lunch.php");
+  } else {
+    echo 'Not Deleted';
+  }
+}
+
+if (!empty($_GET['schoolId'])) {
+
+  $schoolId = $_GET['schoolId'];
+
+  $sql = "DELETE FROM school_fee WHERE `id`='$schoolId'";
+  $run = $conn->query($sql);
+  if ($run == 1) { 
+    header("Location:school fee.php");
+  } else {
+    echo 'Not Deleted';
+  }
+}

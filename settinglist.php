@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tutorial List</title>
+    <title>setting List</title>
     <?php include 'includes/header-links.php'; ?>
     <?php include 'sweetalert.php' ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -28,63 +28,66 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
-                            <form action="action.php" method="POST" enctype="multipart/form-data">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Add gallery</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <label for="">image</label>
-                                        <input type="file" name="image" class="form control" required>
-
-                                        <br><button type="submit" name="addgallery" class="btn btn-success">
-                                            save
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="border:2px solid #428bca; border-radius:10px;">
+                        <div class="col-md-12">
+                            <br>
+                            <div class="card" style=" border-radius:10px;">
                                 <div class="card-header">
-                                    <h3 class="card-title">gellery List</h3>
+                                    <h3 class="card-title">setting List</h3>
                                 </div>
-                                <!-- /.card-header -->
+
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table data-table stripe hover nowrap table-bordered table-striped" id="myTable">
                                             <thead>
                                                 <tr>
-                                                    <th>S. No.</th>
-                                                    <th>image</th>
-                                                    <th>Action</th>
+                                                    <th>Sl.no</th>
+                                                    <th>Footer text</th>
+                                                    <th>facebook</th>
+                                                    <th>Instagram</th>
+                                                    <th>Youtube</th>
+                                                    <th>Linkedin</th>
+                                                    <th>Address</th>
+                                                    <th>Email</th>
+                                                    <th>Phone</th>
+                                                    <th>map_iframe</th>
+                                                    <th>Action<span style="color:white;"></span></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $sql = "SELECT * FROM gallery";
+                                                $sql = "select * from  tbl_setting";
                                                 $res = mysqli_query($conn, $sql);
                                                 $sn = 0;
                                                 while ($row = mysqli_fetch_assoc($res)) {
                                                     $sn++;
 
-
-                                                ?>
-
-                                                <?php
-                                                
-                                                                                             
+                                                    // echo '<pre>';
+                                                    // print_r($row); die;
                                                 ?>
                                                     <tr>
                                                         <td><?= $sn; ?></td>
-                                                        <td><a href="gallery/<?php echo trim($row['image'])?>"><img src="gallery/<?php echo trim($row['image'])?>" alt="" style="width:100px; height:100px;"></a></td>
 
+                                                        <td><?= $row['footer_text']; ?></td>
+                                                        <td><?= $row['facebook']; ?></td>
+                                                        <td><?= $row['instagram']; ?></td>
+                                                        <td><?= $row['youtube']; ?></td>
+                                                        <td><?= $row['linkedin']; ?></td>
+                                                        <td><?= $row['address']; ?></td>
+                                                        <td><?= $row['email']; ?></td>
+                                                        <td><?= $row['phone']; ?></td>
+                                                        <td><?= $row['map_iframe']; ?></td>
                                                         <td>
-                                                            <a href="editlunch.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-success">Edit</a>
-                                                            <a href="deletedata.php?galleryId=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                                                            <a href="deletedata.php?delete_setting=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">DELETE</a>
+                                                            <a href="edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning ">EDIT</a>
+
+                                                            
                                                         </td>
+
+
+
+                                                        <!-- <a href="edit_student.php?id=<?php echo $row['s_id']; ?>" class="btn btn-sm btn-success">Edit</a> -->
+                                                        <!-- <a href="deletestudentdata.php?delete=tbl_student&s_id=<?php echo $row['s_id']; ?>"  class="btn btn-sm btn-danger">Delete</a> -->
+
                                                     </tr>
                                                 <?php  }  ?>
                                             </tbody>

@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tutorial List</title>
+    <title>enquiry</title>
     <?php include 'includes/header-links.php'; ?>
     <?php include 'sweetalert.php' ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -28,43 +28,30 @@
             <section class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-6">
-                            <form action="action.php" method="POST" enctype="multipart/form-data">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Add gallery</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <label for="">image</label>
-                                        <input type="file" name="image" class="form control" required>
-
-                                        <br><button type="submit" name="addgallery" class="btn btn-success">
-                                            save
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="border:2px solid #428bca; border-radius:10px;">
+                        <div class="col-md-12">
+                            <br>
+                            <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">gellery List</h3>
+                                    <h3 class="card-title">Enquiry List</h3>
                                 </div>
-                                <!-- /.card-header -->
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table data-table stripe hover nowrap table-bordered table-striped" id="myTable">
                                             <thead>
                                                 <tr>
-                                                    <th>S. No.</th>
-                                                    <th>image</th>
-                                                    <th>Action</th>
+                                                    <th>Sl.No</th>
+                                                    <th>Name</th>
+                                                    <th>Class</th>
+                                                    <th>Email</th>
+                                                    <th>Number</th>
+                                                    <th>Address</th>
+                                                    <th>Date</th>
+                                                    <th>Action<span style="color:white;"></span></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                $sql = "SELECT * FROM gallery";
+                                                $sql = "SELECT * FROM  tbl_enquiry";
                                                 $res = mysqli_query($conn, $sql);
                                                 $sn = 0;
                                                 while ($row = mysqli_fetch_assoc($res)) {
@@ -72,19 +59,22 @@
 
 
                                                 ?>
-
-                                                <?php
-                                                
-                                                                                             
-                                                ?>
                                                     <tr>
                                                         <td><?= $sn; ?></td>
-                                                        <td><a href="gallery/<?php echo trim($row['image'])?>"><img src="gallery/<?php echo trim($row['image'])?>" alt="" style="width:100px; height:100px;"></a></td>
+                                                        <td><?= $row['name']; ?></td>
+                                                        <td><?= $row['class']; ?></td>
+                                                        <td><?= $row['email']; ?></td>
+                                                        <td><?= $row['number']; ?></td>
+                                                        <td><?= $row['address']; ?></td>
+                                                        <td><?= $row['create_at']; ?></td>
 
                                                         <td>
-                                                            <a href="editlunch.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-success">Edit</a>
-                                                            <a href="deletedata.php?galleryId=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                                                            <a href="deletedata.php?delete_enquiry=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">DELETE</a>
+
+                                                            <a href="editenquiry.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning">Edit</a>
+                                                            
                                                         </td>
+
                                                     </tr>
                                                 <?php  }  ?>
                                             </tbody>

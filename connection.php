@@ -1,14 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = 'school_db';
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-
-// $sql = " select * from result";
-// $result = $conn->query($sql);
-// $row = mysqli_fetch_assoc($result);
-// echo '<pre>';
-// print_r($row); die;
-?>
+if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] == 'localhost:8081' || $_SERVER['HTTP_HOST'] == 'localhost') {
+	$conn = new mysqli("localhost", "root", "", "project_db");
+} else {
+	$conn = new MySQLi("localhost", "", "", "");
+}
+if ($conn->connect_errno) {
+	echo "connection failed!!";
+}
+date_default_timezone_set('Asia/Kolkata');
