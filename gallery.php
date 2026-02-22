@@ -1,121 +1,260 @@
-<?php include 'session.php' ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tutorial List</title>
-    <?php include 'includes/header-links.php'; ?>
-    <?php include 'sweetalert.php' ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin:wght@400;500;700&family=Poppins:wght@300;400;500&display=swap');
-
-    :root {
-        --lg-font: 'Kaisei Tokumin', serif;
-        --sm-font: 'Poppins', sans-serif;
-    }
-</style>
-
-<body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        <?php include 'includes/top-header.php'; ?>
-        <?php include 'includes/sidebar.php'; ?>
-        <div class="content-wrapper">
-            <?php include 'includes/page-header.php'; ?>
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <form action="action.php" method="POST" enctype="multipart/form-data">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Add gallery</h3>
-                                    </div>
-                                    <div class="card-body">
-                                        <label for="">image</label>
-                                        <input type="file" name="image" class="form control" required>
-
-                                        <br><button type="submit" name="addgallery" class="btn btn-success">
-                                            save
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card" style="border:2px solid #428bca; border-radius:10px;">
-                                <div class="card-header">
-                                    <h3 class="card-title">gellery List</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table data-table stripe hover nowrap table-bordered table-striped" id="myTable">
-                                            <thead>
-                                                <tr>
-                                                    <th>S. No.</th>
-                                                    <th>image</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                $sql = "SELECT * FROM gallery";
-                                                $res = mysqli_query($conn, $sql);
-                                                $sn = 0;
-                                                while ($row = mysqli_fetch_assoc($res)) {
-                                                    $sn++;
+<?php include 'headerlink.php' ?>
+<?php include 'header.php' ?>
+<?php include 'headerbennar.php' ?>
+<?php include 'navbar.php' ?>
 
 
-                                                ?>
+<?php
 
-                                                <?php
-                                                
-                                                                                             
-                                                ?>
-                                                    <tr>
-                                                        <td><?= $sn; ?></td>
-                                                        <td><a href="gallery/<?php echo trim($row['image'])?>"><img src="gallery/<?php echo trim($row['image'])?>" alt="" style="width:100px; height:100px;"></a></td>
+include '../cms/admin/connection.php';
 
-                                                        <td>
-                                                            <a href="editlunch.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-success">Edit</a>
-                                                            <a href="deletedata.php?galleryId=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                <?php  }  ?>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+$sql = "SELECT * FROM gallery";
+$run = $conn->query($sql);
+$results = array();
+
+while($row =mysqli_fetch_assoc($run)){
+    $results[] =$row;
+}
+
+// echo '<pre>';
+// print_r($results);
+// die;
+?>
+<section>
+    <img src="image/g2.jpg" alt="" class="img-fluid">
+</section>
+<section class=Gallery>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <h4>Annual Function 2024</h4>
                 </div>
-            </section>
-
+            </div>
         </div>
-        <?php include 'includes/copyright.php'; ?>
-        <aside class="control-sidebar control-sidebar-dark">
-        </aside>
-    </div>
-    <?php include 'includes/footer-links.php'; ?>
-    <script>
-        $(function() {
-            $("#example1").DataTable({
-                "responsive": true,
-                "autoWidth": false,
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-    </script>
-</body>
+        <div class="row">
+            <?php
 
-</html>
+            foreach ($results as $key => $value){?>
+                <div class="col-md-4">
+                <div class="box1">
+                    <img src="admin/gallery/<?php echo trim($value['image'])?>" alt="" class="img-fluid">
+                </div>
+            </div>
+
+            <?php } ?>
+            
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp4.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp5.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp6.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp7.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp9.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp3.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp2.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp6.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp3.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp4.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp5.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp4.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp6.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp3.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp4.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp5.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/ppp6.jpg" alt="" class="img-fluid">
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box">
+                <h4>Plantation Day</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg1.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg2.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg3.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg4.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg5.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg6.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg7.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg8.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg9.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg5.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg4.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box1">
+                    <img src="image/gg3.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="box">
+                <h2>Indian festivals celebration and fancy dress competition</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="margin-left: 370px;">
+                <div class="box1">
+                    <img src="image/gg10.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php include 'footer.php' ?>
+<?php include 'capyright.php' ?>
+<?php include 'footerlink.php' ?>
